@@ -40,7 +40,7 @@ async def give_filter(client,message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("😁 𝗛𝗲𝘆 𝗙𝗿𝗶𝗲𝗻𝗱,𝗣𝗹𝗲𝗮𝘀𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗿𝘀𝗲𝗹𝗳.",show_alert=True)
+        return await query.answer("കൊള്ളാലോ നീ 😱",show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -63,7 +63,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"📁 [{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -90,27 +90,27 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("‹‹ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}",
+            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"📃 Pages {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/MovieClubOfficiall")]             
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("𝙽𝙴𝚇𝚃 ››", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("‹‹ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"𝙿𝙰𝙶𝙴 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("𝙽𝙴𝚇𝚃 ››", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/MovieClubOfficiall")]             
         )
     try:
         await query.edit_message_reply_markup(
@@ -125,7 +125,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("😁 𝗛𝗲𝘆 𝗙𝗿𝗶𝗲𝗻𝗱,𝗣𝗹𝗲𝗮𝘀𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗿𝘀𝗲𝗹𝗳.", show_alert=True)
+        return await query.answer("കൊള്ളാലോ നീ 😱", show_alert=True)
     if movie_  == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
@@ -250,24 +250,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title}</a></i></b>\n\n<b><i>🎗 Size : {size}</b></i>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 5 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading.. ⚠️</i>\n\n<b><i>🧑🏻‍💻 Requested By : {query.from_user.mention}\n🚀 Group : {query.message.chat.title}</i></b>',
+                    caption=f'<b>Hey 👋 {query.from_user.mention} 😍</b>\n\n<code>{title}</code>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 5 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading..!!!</i>\n\n<b>╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @MC_DVDUPDATES\n♻️ 𝙅𝙊𝙄𝙉 :- @MovieClubOfficiall\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>',
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
-                f'<b><i>{query.from_user.mention} Your File Is Ready ✨</i></b>\n\n'
-                f'<b><i>📟 Name : <a href=https://t.me/MWUpdatez>{title}</a></i></b>\n\n'
-                f'<b><i>🎗 Size : {size}</b></i>\n\n'
-                '<i>⚡️Click The Below Button For Files.⚡️</i>',
+                f'<b>Hey 👋 {query.from_user.mention} 😍\n\n📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇</b>\n\n'
+                f'<b>📂 Mᴏᴠɪᴇ Nᴀᴍᴇ :<code>{title}</code>\n\n'
+                f'<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ :{size}</b>',
                 True,
                 'html',
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ғɪʟᴇ", url = ms.link)
+                            InlineKeyboardButton("📥 Download Link 📥", url = ms.link)
                         ],
                         [
-                            InlineKeyboardButton("ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ғɪʟᴇs ᴄʜᴀɴɴᴇʟ", url = f"{CH_LINK}")
+                            InlineKeyboardButton("⚠️ Cant Access❓️Click Here ⚠️", url = f"{CH_LINK}")
                         ]
                     ]
                 )
@@ -399,7 +398,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"📁 [{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -425,18 +424,18 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"𝙿𝙰𝙶𝙴 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="𝙽𝙴𝚇𝚃 ››", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/MovieClubOfficiall")]             
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="𝙿𝙰𝙶𝙴 1/1", callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="✅ 𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ✅",url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/MovieClubOfficiall")]
         )    
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -476,19 +475,31 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b><i>📟 Movie Name : {search}\n👩🏻‍💻 Requested By : {message.from_user.mention}\n🚀 Group : {message.chat.title}</i></b>"
+        cap = f"<b>🎬 Title : {search}\n🌟 8.7/10 | IMDb\n🎭 Genres: Document, Drama, Thriller\n👤 Requested By: {message.from_user.mention}\n\n© By {message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
-            await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await hehe.delete()
+            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await hmm.delete()
+            await message.delete()
         except Exception as e:
             logger.exception(e)
-            await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo="https://telegra.ph/file/7ecd6795ad080b08c8bc6.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await hmm.delete()
+            await message.delete()
     else:
-        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/7ecd6795ad080b08c8bc6.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(300)
+        await hmm.delete()
+        await message.delete()
     if spoll:
         await msg.message.delete()
 
