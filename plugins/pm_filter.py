@@ -310,7 +310,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = buttons = [[            
-            InlineKeyboardButton('SUBSCRIBE', url='https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA')
+            InlineKeyboardButton('⭕️ Join Our Channel ⭕️', url='https://t.me/MovieClubOfficiall')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -432,7 +432,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="𝙿𝙰𝙶𝙴 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
         btn.insert(0,
             [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/MovieClubOfficiall")]
