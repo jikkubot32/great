@@ -23,11 +23,11 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝙱𝙾𝚃', url=f"https://t.me/Aadhi011")
+                InlineKeyboardButton('🤖 Updates', url=f"https://t.me/MovieClubOfficiall")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.PRIVATEBOT_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/Aadhi000/Ajax-Extra-Features/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -39,7 +39,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[            
-            InlineKeyboardButton('SUBSCRIBE', url='https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA')
+            InlineKeyboardButton('⚙️ Jᴏɪɴ Oᴜʀ Oғғɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ ⚙️', url='https://t.me/MovieClubOfficiall')
             ]]     
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
@@ -58,21 +58,28 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🔥 JOIИ CHΛИИΞL 🔥", url=invite_link.invite_link
+                    "🔌 Jᴏɪɴ Cʜᴀɴɴᴇʟ 🔌", url=invite_link.invite_link
                 )
             ]
         ]
+
+        if message.command[1] != "subscribe":
+            try:
+            	kk, file_id = message.command[1].split("_", 1)
+            	pre = 'checksubp' if kk == 'filep' else 'checksub' 
+            	btn.append([InlineKeyboardButton(" ⏳ Tʀʏ Aɢᴀɪɴ ⏳", callback_data=f"{pre}#{file_id}")])
+            except IndexError:
+                btn.append([InlineKeyboardButton(" ⏳ Tʀʏ Aɢᴀɪɴ ⏳", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**ᴊᴏɪɴ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛʜᴇɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛʜᴇ ʟɪɴᴋ ᴀɢᴀɪɴ ғᴏʀ ғɪʟᴇs.!**",
+            text="♦️ **READ THIS INSTRUCTION** ♦️\n\n🗣 __മൂവി ക്ലബ്‌ ഗ്രൂപ്പിൽ ചോദിക്കുന്ന സിനിമകൾ നിങ്ങൾക്ക് ലഭിക്കണം എന്നുണ്ടെങ്കിൽ നിങ്ങൾ താഴെ കൊടുത്തിട്ടുള്ള ചാനലിൽ ജോയിൻ ചെയ്യണം. ജോയിൻ ചെയ്ത ശേഷം വീണ്ടും ഗ്രൂപ്പിൽ പോയി ആ ബട്ടനിൽ അമർത്തിയാൽ നിങ്ങൾക്ക് ഞാൻ ആ സിനിമ പ്രൈവറ്റ് ആയി അയച്ചു തരുന്നതാണ്..__😍\n\n🗣 __In Order To Get The Movies Requested By You in Our Groups, You Will Have To Join Our Official Channel First. After That, Try Accessing That Movie Again From Our Group Or Click Try Again Button. I'll Send You That Movie Privately__ 🙈 \n\n👇 **JOIN THIS CHANNEL & TRY** 👇",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
- 
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[            
-            InlineKeyboardButton('SUBSCRIBE', url='https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA')
+            InlineKeyboardButton('⚙️ Jᴏɪɴ Oᴜʀ Oғғɪᴄɪᴀʟ Cʜᴀɴɴᴇʟ ⚙️', url='https://t.me/MovieClubOfficiall')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
