@@ -250,7 +250,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f'<b>Hey 👋 {query.from_user.mention} 😍</b>\n\n<code>{title}</code>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 5 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading..!!!</i>\n\n<b>╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @MC_DVDUPDATES\n♻️ 𝙅𝙊𝙄𝙉 :- @MovieClubOfficiall\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>',
+                    caption=f'<b>Hey 👋 {query.from_user.mention} 😍</b>\n\n<code>{title}</code>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 3 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading..!!!</i>\n\n<b>╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n⚠️ 𝙅𝙊𝙄𝙉 :- @MC_DVDUPDATES\n⚠️ 𝙅𝙊𝙄𝙉 :- @MovieClubOfficiall\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>',
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
@@ -271,7 +271,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await asyncio.sleep(300)
+            await asyncio.sleep(180)
             await msg1.delete()            
             await ms.delete()
             del msg1, ms
