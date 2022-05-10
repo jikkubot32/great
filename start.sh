@@ -8,5 +8,5 @@ else
 fi
 cd /great
 pip3 install -U -r requirements.txt
-echo "Starting DQ....🔥"
+echo "Starting BOT....🔥"
 python3 bot.py
