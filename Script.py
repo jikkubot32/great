@@ -12,11 +12,11 @@ class script(object):
 ✯ 𝚂𝙾𝚄𝚁𝙲𝙴: <a href=https://t.me/kurachkanjiedukkatte/8>👉 Click Here</a>
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>DISCLAIMER NOTE‼️:</b>
-<b>- @FilmClub_Channel is an Open Source Project.</b> <code>All the files in this bot are freely available on the internet or posted by somebody else. This bot is indexing files which are already uploaded on Telegram for easy of searching, We respect all the copyright laws and works in compliance with DMCA and EUCD. If anything is against law please contact us so that it can be removed asap. It is forbidden to download, stream, reproduce, or by any means, share, or consume, content without explicit permission from the content creator or legal copyright holder. If you believe this bot is violating your intellectual property, contact the respective channels for removal. The Bot does not own any of these contents, it only index the files from telegram. </code>
-- <b>Source - @FilmClubGroup </b>
+<b>- @Film_ClubChannel is an Open Source Project.</b> <code>All the files in this bot are freely available on the internet or posted by somebody else. This bot is indexing files which are already uploaded on Telegram for easy of searching, We respect all the copyright laws and works in compliance with DMCA and EUCD. If anything is against law please contact us so that it can be removed asap. It is forbidden to download, stream, reproduce, or by any means, share, or consume, content without explicit permission from the content creator or legal copyright holder. If you believe this bot is violating your intellectual property, contact the respective channels for removal. The Bot does not own any of these contents, it only index the files from telegram. </code>
+- <b>Source - @Film_ClubGroup </b>
 
 <b>DEVS:</b>
-- <a href=https://t.me/FilmClub_Channel>Team Film Club</a>"""
+- <a href=https://t.me/Film_ClubChannel>Team Film Club</a>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and Auto Filter will respond whenever a keyword is found the message
