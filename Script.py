@@ -41,7 +41,7 @@ class script(object):
 3. Buttons should be properly parsed as markdown format
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/FilmClub_Channel)</code>
+<code>[Button Text](buttonurl:https://t.me/Film_ClubChannel)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
