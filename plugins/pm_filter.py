@@ -95,7 +95,7 @@ async def next_page(bot, query):
                                   callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/FilmClub_Channel")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/Film_ClubChannel")]             
         )
     elif off_set is None:
         btn.append(
@@ -110,7 +110,7 @@ async def next_page(bot, query):
             ],
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/FilmClub_Channel")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/Film_ClubChannel")]             
         )
     try:
         await query.edit_message_reply_markup(
@@ -250,7 +250,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f'<b>Hey 👋 {query.from_user.mention} 😍</b>\n\n<code>{title}</code>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 5 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading..!!!</i>\n\n<b>╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n⚠️ 𝙅𝙊𝙄𝙉 :- @FilmClubGroup\n♻️ 𝙅𝙊𝙄𝙉 :- @NewDVDReleaseUpdate\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>',
+                    caption=f'<b>Hey 👋 {query.from_user.mention} 😍</b>\n\n<code>{title}</code>\n\n<i>⚠️ This Message Will Be Auto-Deleted In Next 5 Minutes T𝘰 Avoid Copyright Issues.So Forward This File To Anywhere Else Before Downloading..!!!</i>\n\n<b>╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n⚠️ 𝙅𝙊𝙄𝙉 :- @Film_ClubGroup\n♻️ 𝙅𝙊𝙄𝙉 :- @New_DVD_OTT_Update\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>',
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
@@ -310,7 +310,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = buttons = [[            
-            InlineKeyboardButton('⭕️ Join Our Channel ⭕️', url='https://t.me/FilmClub_Channel')
+            InlineKeyboardButton('⭕️ Join Our Channel ⭕️', url='https://t.me/Film_ClubChannel')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -428,14 +428,14 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/FilmClub_Channel")]             
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/Film_ClubChannel")]             
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
         btn.insert(0,
-            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/FilmClub_Channel")]
+            [InlineKeyboardButton(text="⭕️ Join Our Channel ⭕️",url="https://t.me/Film_ClubChannel")]
         )    
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
